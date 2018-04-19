@@ -234,7 +234,7 @@ void AfterSubject()
 }
 
 //RE:<afterNoun>  ::= <be>  PERIOD | DESTINATION  <verb> <tense> PERIOD | OBJECT <afterObject>                                               
-// i.e. Done by:Antonio Monje  
+// i.e. Done by:Stefan Retief
 void AfterNoun()
 {
   cout << "Processing <After-Noun>" << endl;
@@ -328,11 +328,14 @@ void Tense()
     }
 }
 // ** Be sure to put the corresponding grammar rule above each function                                                                      
+
+// ** Done by: Stefan Retief                                                                                                                                                       
 void Syntax_Error1(tokentype thetoken)
 {
   cout << "LEXICAL ERROR: " << thetoken << " but found " << endl;
 }
 
+// ** Done by: Stefan Retief                                                                                                                                                      
 void Syntax_Error2(string saved_lexeme)
 {
   cout << "SYNTAX ERROR: unexpected " << saved_lexeme << " found in parser function" << endl;
