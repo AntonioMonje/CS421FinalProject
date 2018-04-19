@@ -122,7 +122,7 @@ ifstream fin;
 
 
 // The test driver to start the parser
-// Done by:  Antonio Monje
+// Done by:  **
 int main()
 {
   
@@ -148,7 +148,6 @@ int main()
 // ** Need syntaxerror1 and syntaxerror2 functions (each takes 2 args)                                                                                                             
 // ** Need the updated match and next_token (with 2 global vars)                                                                                                                   
 
-// Done by:Alejandro Monje 
 tokentype next_token()
 {  
   if (!token_available)   // if there is no saved token from previous lookahead                                                                                                    
@@ -160,7 +159,7 @@ tokentype next_token()
   return saved_token;    // return the saved token                                                                                                                                 
 }
 
-// i.e. Done by:Stefan Retief                                                                                                                
+// i.e. Done by:Antonio Monje                                                                                                                                                      
 bool match(tokentype expected)
 {
  
@@ -180,8 +179,7 @@ bool match(tokentype expected)
 
 // ** Make each non-terminal into a function here                                                                                                
 
-//RE:<story>  ::= <s> { <s> }                                                                                                                
-// i.e. Done by:Antonio Monje                                                                                                                
+// i.e. Done by:Antonio Monje                                                                                                                   
 void Story()
 {
   cout << "Processing <Story> " << endl;
@@ -200,8 +198,7 @@ void Story()
     }
 }
 
-//RE:<s>  ::=  [CONNECTOR] <noun> SUBJECT <afterSubject>                                                                                     
-// i.e. Done by:Antonio Monje                                                                                                                
+// i.e. Done by:Antonio Monje                                                                                                                  
 void S()
 {
   cout << "Processing <S>" << endl;
@@ -216,8 +213,7 @@ void S()
   AfterSubject();
 }
 
-//RE:<afterSubject>  ::= <verb> <tense> PERIOD | <noun>  <afterNoun>                                                                         
-// i.e. Done by:Antonio Monje  
+// i.e. Done by:Antonio Monje                                                                                                                   
 void AfterSubject()
 {
   cout << "Processing <After-Subject>" << endl;
@@ -233,8 +229,7 @@ void AfterSubject()
     }
 }
 
-//RE:<afterNoun>  ::= <be>  PERIOD | DESTINATION  <verb> <tense> PERIOD | OBJECT <afterObject>                                               
-// i.e. Done by:Antonio Monje  
+// i.e. Done by:Antonio Monje                                                                                                                   
 void AfterNoun()
 {
   cout << "Processing <After-Noun>" << endl;
@@ -251,8 +246,7 @@ void AfterNoun()
     }
 }
 
-//RE:<afterObject>_ ::= <verb> <tense> PERIOD | <noun> DESTINATION <verb> <tense> PERIOD                                                     
-// i.e. Done by:Antonio Monje                                                                                                                
+// i.e. Done by:Antonio Monje                                                                                                                  
 void AfterObject()
 {
   cout << "Processing <After-Object>" << endl;
@@ -269,8 +263,7 @@ void AfterObject()
 }
 
 
-//RE:<noun>  ::= WORD1 | PRONOUN                                                                                                    
-// i.e. Done by:Alejandro Monje                                                                                                        
+// i.e. Done by:Antonio Monje                                                                                                       
 void Noun()
 {
   cout << "Processing <Noun>" << endl;
@@ -284,8 +277,7 @@ void Noun()
     }
 }
 
-//RE:<verb>  ::= WORD2                                                                                                                       
-// i.e. Done by:Alejandro Monje               
+// i.e. Done by:Antonio Monje                                                                                                                    
 void Verb()
 {
   cout << "Processing <Verb>" << endl;
@@ -293,8 +285,7 @@ void Verb()
   cout << "Matched WORD2" << endl;
 }
 
-//RE:<be>  ::= IS | WAS                                                                                                                      
-// i.e. Done by:Alejandro Monje                                                                                                              
+// i.e. Done by:Antonio Monje                                                                                                                   
 void Be()
 {
   cout << "Processing <Be>" << endl;
@@ -309,8 +300,7 @@ void Be()
   
 }
 
-//RE:<tense>  ::= VERBPAST  | VERBPASTNEG | VERB | VERBNEG                                                                                   
-// i.e. Done by:Alejandro Monje  
+// i.e. Done by:Antonio Monje                                                                                                                    
 void Tense()
 {
   cout << "Processing <Tense>" << endl;
@@ -327,7 +317,8 @@ void Tense()
     default: Syntax_Error2("TENSE");
     }
 }
-// ** Be sure to put the corresponding grammar rule above each function                                                                      
+// ** Be sure to put the corresponding grammar rule above each function                                                                                                             
+
 void Syntax_Error1(tokentype thetoken)
 {
   cout << "LEXICAL ERROR: " << thetoken << " but found " << endl;
@@ -345,8 +336,7 @@ void Syntax_Error2(string saved_lexeme)
 /////
 //
 //
-// ** Done by: Stefan Retief                                                                                                                 
-// ** RE: (vowel | vowel n | consonant vowel | consonant vowel n |consonant-pair vowel | consonant-pair vowel n)^+   
+
 bool word(string s) {
   int state = 0;
   int charpos = 0;
@@ -468,8 +458,9 @@ bool word(string s) {
   else return (false);
 }
 
+// ** Add the PERIOD DFA here
+// ** Done by:
 
-// ** Done by:Stefan Retief
 bool period(string s) {
   int state = 0;
   int charpos = 0;
@@ -485,7 +476,7 @@ bool period(string s) {
   if (state == 1) return (true);
   else return (false);
 }
-//Done by: Antonio Monje, Alejandro Monje
+
 int scanner(tokentype &a, string &w) {
 
   // ** Grab the next word from the file via fin
