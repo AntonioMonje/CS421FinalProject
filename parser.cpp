@@ -3,9 +3,9 @@
 #include<string>
 using namespace std;
 
-//=================================================
-// File parser.cpp written by Group Number: 8
-//=================================================
+//=================================================                                                                                                                                 
+// File parser.cpp written by Group Number: 8                                    
+//=================================================  
 enum tokentype{ ERROR,
 		WORD1,
 		WORD2,
@@ -44,7 +44,7 @@ string reservedWords[30][2] = {
   {"soshite",      "Then"},
   {"shikashi",     "However"},
   {"dakara",       "Therefore"},
-  {"eofm",         ""}
+  {"eofm",         ""}  
 };
 
 
@@ -96,11 +96,10 @@ bool period(string s);
 int scanner(tokentype &a, string &w);
 bool match(tokentype expected);
 void Story();
-void Sent();
+void S();
 void AfterSubject();
 void AfterNoun();
 void AfterObject();
-void AfterDestination();
 void Noun();
 void Verb();
 void Be();
@@ -126,83 +125,83 @@ ifstream fin;
 // Done by:  **
 int main()
 {
-
+  
   //- opens the input file
   tokentype thetype;
   string theword;
   string filename;
-
+  
   cout << "Enter the input file name: ";
   cin >> filename;
-
+ 
   fin.open(filename.c_str());
   //- calls the <story> to start parsing
   Story();
-  //- closes the input file
+  //- closes the input file 
   fin.close();
   return 0;
 }// end
 //** should require no other input files!
 
-// ** Be sure to put the name of the programmer above each function
-// i.e. Done by:
-// ** Need syntaxerror1 and syntaxerror2 functions (each takes 2 args)
-// ** Need the updated match and next_token (with 2 global vars)
+// ** Be sure to put the name of the programmer above each function                                                                                                                
+// i.e. Done by:                                                                                                                                                                   
+// ** Need syntaxerror1 and syntaxerror2 functions (each takes 2 args)                                                                                                             
+// ** Need the updated match and next_token (with 2 global vars)                                                                                                                   
 
 tokentype next_token()
-{
-  if (!token_available)   // if there is no saved token from previous lookahead
+{  
+  if (!token_available)   // if there is no saved token from previous lookahead                                                                                                    
     {
-      scanner(saved_token, lexeme);  // call scanner to grab a new token
+      scanner(saved_token, lexeme);  // call scanner to grab a new token                                                                 
       cout << "Scanner called using word: " << lexeme << endl;
-      token_available = true;  // mark that fact that you have saved it
+      token_available = true;  // mark that fact that you have saved it                                                                                           
     }
-  return saved_token;    // return the saved token
+  return saved_token;    // return the saved token                                                                                                                                 
 }
 
-// i.e. Done by:Antonio Monje
+// i.e. Done by:Antonio Monje                                                                                                                                                      
 bool match(tokentype expected)
 {
-
-  if (next_token() != expected)  // mismatch has occurred with the next token
+ 
+  if (next_token() != expected)  // mismatch has occurred with the next token                                                                                                      
     {
-      Syntax_Error1(expected); // generate a syntax error message here
+      Syntax_Error1(expected); // generate a syntax error message here                                                                                                                   
       scanner(saved_token, lexeme);
       match(saved_token);
-      // do error handling here if any
+      // do error handling here if any                                                                                                                                             
     }
-  else  // match has occurred
+  else  // match has occurred                                                                                                                                                      
     {
-      token_available = false;  // eat up the token
-      return true;              // say there was a match
+      token_available = false;  // eat up the token                                                                                                                               
+      return true;              // say there was a match                                                                                                                           
     }
 }
 
-// ** Make each non-terminal into a function here
+// ** Make each non-terminal into a function here                                                                                                
 
-// i.e. Done by:Antonio Monje
+// i.e. Done by:Antonio Monje                                                                                                                   
 void Story()
 {
   cout << "Processing <Story> " << endl;
   cout << endl;
-  Sent();
+  S();
   while(next_token() != EOFM)
     {
       switch(next_token())
         {
         case CONNECTOR:
         case WORD1:
-        case PRONOUN: Sent();
+        case PRONOUN: S();
           break;
         default: return;
         }
     }
 }
 
-// i.e. Done by:Antonio Monje
-void Sent()
+// i.e. Done by:Antonio Monje                                                                                                                  
+void S()
 {
-  cout << "Processing <Sent>" << endl;
+  cout << "Processing <S>" << endl;
   if(next_token() == CONNECTOR)
     {
     match(CONNECTOR);
@@ -214,7 +213,7 @@ void Sent()
   AfterSubject();
 }
 
-// i.e. Done by:Antonio Monje
+// i.e. Done by:Antonio Monje                                                                                                                   
 void AfterSubject()
 {
   cout << "Processing <After-Subject>" << endl;
@@ -230,46 +229,41 @@ void AfterSubject()
     }
 }
 
-// i.e. Done by:Antonio Monje
+// i.e. Done by:Antonio Monje                                                                                                                   
 void AfterNoun()
 {
   cout << "Processing <After-Noun>" << endl;
   switch (next_token())
     {
     case IS :
-    case WAS : Be(); match(PERIOD); cout << "Matched PERIOD" << endl;
+    case WAS : Be(); match(PERIOD); cout << "Matched PERIOD" << endl; 
       break;
-    case DESTINATION : match(DESTINATION); cout << "Matched DESTINATION" << endl; Verb(); Tense(); match(PERIOD); cout << "Matched PERIOD" << endl;
+    case DESTINATION : match(DESTINATION); cout << "Matched DESTINATION" << endl; Verb(); Tense(); match(PERIOD); cout << "Matched PERIOD" << endl; 
       break;
-    case OBJECT : match(OBJECT); cout << "Matched OBJECT" << endl; AfterObject();
+    case OBJECT : match(OBJECT); cout << "Matched OBJECT" << endl; AfterObject(); 
       break;
     default : Syntax_Error2("After-Noun");
     }
 }
 
-// i.e. Done by:Antonio Monje
+// i.e. Done by:Antonio Monje                                                                                                                  
 void AfterObject()
 {
   cout << "Processing <After-Object>" << endl;
-  Noun();
-  match(DESTINATION);
-  cout << "Matched DESTINATION" << endl;
-  if(next_token() == WORD2)
-    AfterObject();
-
+  switch(next_token())
+    {
+    case WORD2: Verb(); Tense(); match(PERIOD); cout << "Matched PERIOD" << endl;
+      break;
+    case WORD1:
+    case PRONOUN: Noun(); match(DESTINATION); cout << "Matched DESTINATION" << endl; Verb(); Tense(); match(PERIOD); cout << "Matched PERIOD" << endl; 
+      break;
+    default: Syntax_Error2("After-Object");
+    }
+  
 }
 
-// i.e. Done by:Antonio Monje
-void AfterDestination()
-{
-  cout << "Processing <After-Destination>" << endl;
-  Verb();
-  Tense();
-  match(PERIOD);
-  cout << "Matched PERIOD" << endl;
-}
 
-// i.e. Done by:Antonio Monje
+// i.e. Done by:Antonio Monje                                                                                                       
 void Noun()
 {
   cout << "Processing <Noun>" << endl;
@@ -283,7 +277,7 @@ void Noun()
     }
 }
 
-// i.e. Done by:Antonio Monje
+// i.e. Done by:Antonio Monje                                                                                                                    
 void Verb()
 {
   cout << "Processing <Verb>" << endl;
@@ -291,7 +285,7 @@ void Verb()
   cout << "Matched WORD2" << endl;
 }
 
-// i.e. Done by:Antonio Monje
+// i.e. Done by:Antonio Monje                                                                                                                   
 void Be()
 {
   cout << "Processing <Be>" << endl;
@@ -303,10 +297,10 @@ void Be()
       break;
     default: Syntax_Error2("BE");
     }
-
+  
 }
 
-// i.e. Done by:Antonio Monje
+// i.e. Done by:Antonio Monje                                                                                                                    
 void Tense()
 {
   cout << "Processing <Tense>" << endl;
@@ -323,16 +317,16 @@ void Tense()
     default: Syntax_Error2("TENSE");
     }
 }
-// ** Be sure to put the corresponding grammar rule above each function
+// ** Be sure to put the corresponding grammar rule above each function                                                                                                             
 
 void Syntax_Error1(tokentype thetoken)
 {
-  cout << "SYNTAX ERROR: expected " << thetoken << " but found " << endl;
+  cout << "LEXICAL ERROR: " << thetoken << " but found " << endl;
 }
 
 void Syntax_Error2(string saved_lexeme)
 {
-  cout << "SYNTAX ERROR: unexpected" << saved_lexeme << " found in parser function" << endl;
+  cout << "SYNTAX ERROR: unexpected " << saved_lexeme << " found in parser function" << endl;
 }
 
 ///////////////////////////Scanner-Functions///////////////////////////////
@@ -520,3 +514,4 @@ int scanner(tokentype &a, string &w) {
     */
 
 }//the end
+
