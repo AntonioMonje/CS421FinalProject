@@ -1,6 +1,7 @@
 #include<iostream>
 #include<fstream>
 #include<string>
+#include<stdlib.h>
 using namespace std;
 
 //=================================================                                                                                                                                 
@@ -108,7 +109,10 @@ void Syntax_Error1(tokentype);
 void Syntax_Error2(string);
 tokentype  saved_token;     // global buffer for the scanner token
 bool   token_available;          // global flag indicating whether
-string lexeme;
+string saved_lexeme;
+bool error1 = false;
+bool error2 = false;
+
 // we have saved a token to eat up or not
 // ** Be sure to put the name of the programmer above each function
 // i.e. Done by:
@@ -137,6 +141,9 @@ int main()
   fin.open(filename.c_str());
   //- calls the <story> to start parsing
   Story();
+  cout << endl;
+  if(error1 == false && error2 == false)
+    cout << "succesfully parsed <Story>" << endl;
   //- closes the input file 
   fin.close();
   return 0;
@@ -153,8 +160,8 @@ tokentype next_token()
 {  
   if (!token_available)   // if there is no saved token from previous lookahead                                                                                                    
     {
-      scanner(saved_token, lexeme);  // call scanner to grab a new token                                                                 
-      cout << "Scanner called using word: " << lexeme << endl;
+      scanner(saved_token, saved_lexeme);  // call scanner to grab a new token                                                                 
+      cout << "Scanner called using word: " << saved_lexeme << endl;
       token_available = true;  // mark that fact that you have saved it                                                                                           
     }
   return saved_token;    // return the saved token                                                                                                                                 
@@ -167,7 +174,7 @@ bool match(tokentype expected)
   if (next_token() != expected)  // mismatch has occurred with the next token                                                                                                      
     {
       Syntax_Error1(expected); // generate a syntax error message here                                                                                                                   
-      scanner(saved_token, lexeme);
+      scanner(saved_token, saved_lexeme);
       match(saved_token);
       // do error handling here if any                                                                                                                                             
     }
@@ -210,10 +217,10 @@ void S()
     match(CONNECTOR);
     cout << "Matched CONNECTOR" << endl;
     }
-  Noun();
-  match(SUBJECT);
-  cout << "Matched SUBJECT" << endl;
-  AfterSubject();
+  Noun(); 
+  match(SUBJECT); 
+  cout << "Matched SUBJECT" << endl; AfterSubject();
+  
 }
 
 //RE:<afterSubject>  ::= <verb> <tense> PERIOD | <noun>  <afterNoun>                                                                         
@@ -332,13 +339,17 @@ void Tense()
 // ** Done by: Stefan Retief                                                                                                                                                       
 void Syntax_Error1(tokentype thetoken)
 {
-  cout << "LEXICAL ERROR: " << thetoken << " but found " << endl;
+  cout << "LEXICAL ERROR: " << saved_token << " but found " << saved_lexeme <<endl;
+  error1 = true; 
+  exit(1);  
 }
 
 // ** Done by: Stefan Retief                                                                                                                                                      
-void Syntax_Error2(string saved_lexeme)
+void Syntax_Error2(string func)
 {
-  cout << "SYNTAX ERROR: unexpected " << saved_lexeme << " found in parser function" << endl;
+  cout << "SYNTAX ERROR: unexpected " << saved_lexeme << " found in parser function " << func << endl;
+  error2 = true;
+  exit(1);
 }
 
 ///////////////////////////Scanner-Functions///////////////////////////////
