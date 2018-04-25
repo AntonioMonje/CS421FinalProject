@@ -162,12 +162,16 @@ tokentype next_token()
     {
       scanner(saved_token, saved_lexeme);  // call scanner to grab a new token                                                                 
       cout << "Scanner called using word: " << saved_lexeme << endl;
+      if(saved_token == ERROR)
+	{
+	  cout << "LEXICAL ERROR: " << saved_lexeme << " is not a valid token" << endl;
+	}
       token_available = true;  // mark that fact that you have saved it                                                                                           
     }
   return saved_token;    // return the saved token                                                                                                                                 
 }
 
-// i.e. Done by:Stefan Retief                                                                                                                
+// i.e. Done by:Alejandro Monje                                                                                                   
 bool match(tokentype expected)
 {
  
@@ -219,7 +223,8 @@ void S()
     }
   Noun(); 
   match(SUBJECT); 
-  cout << "Matched SUBJECT" << endl; AfterSubject();
+  cout << "Matched SUBJECT" << endl;
+  AfterSubject();
   
 }
 
@@ -241,7 +246,7 @@ void AfterSubject()
 }
 
 //RE:<afterNoun>  ::= <be>  PERIOD | DESTINATION  <verb> <tense> PERIOD | OBJECT <afterObject>                                               
-// i.e. Done by:Stefan Retief
+// i.e. Done by:Antonio Monje
 void AfterNoun()
 {
   cout << "Processing <After-Noun>" << endl;
@@ -300,8 +305,8 @@ void Verb()
   cout << "Matched WORD2" << endl;
 }
 
-//RE:<be>  ::= IS | WAS                                                                                                                      
-// i.e. Done by:Alejandro Monje                                                                                                              
+//RE:<be>  ::= IS | WAS                                                                                                           
+// i.e. Done by:Stefan Retief                                                                                                     
 void Be()
 {
   cout << "Processing <Be>" << endl;
@@ -316,8 +321,8 @@ void Be()
   
 }
 
-//RE:<tense>  ::= VERBPAST  | VERBPASTNEG | VERB | VERBNEG                                                                                   
-// i.e. Done by:Alejandro Monje  
+//RE:<tense>  ::= VERBPAST  | VERBPASTNEG | VERB | VERBNEG                                                                       
+// i.e. Done by:Stefan Retief
 void Tense()
 {
   cout << "Processing <Tense>" << endl;
@@ -339,7 +344,7 @@ void Tense()
 // ** Done by: Stefan Retief                                                                                                                                                       
 void Syntax_Error1(tokentype thetoken)
 {
-  cout << "LEXICAL ERROR: " << saved_token << " but found " << saved_lexeme <<endl;
+  cout << "SYNTAX ERROR: Expected " << tokenName[thetoken] << " but found " << saved_lexeme <<endl;
   error1 = true; 
   exit(1);  
 }
