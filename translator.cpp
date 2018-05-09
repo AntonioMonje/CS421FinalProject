@@ -214,7 +214,9 @@ bool match(tokentype expected)
 // ** Make each non-terminal into a function here                                                                                                
 //    getEword - using the current lexeme, look up the English word                                                                                                                                                                                                                   
 //               in the Lexicon if it is there -- save the result                                                                                                                                                                                                                     
-//                 in saved_E_word  
+//                 in saved_E_word 
+
+// i.e. Done by:Antonio Monje 
 void getEword()
 {
   if(saved_lexeme == "watashi")
@@ -323,7 +325,7 @@ void getEword()
 //                     display a line of an IR (saved_E_word or saved_token                                                                                                                                                                                                           
 //                     is used)                                                                                                                                                                                                                                                       
 
-
+// i.e. Done by:Alejandro Monje
 void gen(string word)
 {
   if(word != "TENSE")
@@ -361,7 +363,7 @@ void Story()
     }
 }
 
-//RE:<s>  ::=  [CONNECTOR] <noun> SUBJECT <afterSubject>                                                                                     
+//RE:<s>  ::=  [CONNECTOR #getEword# #gen(“CONNECTOR”)#] <noun> #getEword SUBJECT #gen(“ACTOR”)# <afterSubject> 
 // i.e. Done by:Antonio Monje                                                                                                                
 void S()
 {
@@ -382,7 +384,7 @@ void S()
   
 }
 
-//RE:<afterSubject>  ::= <verb> <tense> PERIOD | <noun>  <afterNoun>                                                                         
+//RE:<afterSubject>  ::= <verb> #getEword# #gen(“ACTION”)# <tense> #gen(“TENSE”)# PERIOD | <noun>  #getEword# <afterNoun>                                                         
 // i.e. Done by:Antonio Monje  
 void AfterSubject()
 {
@@ -398,7 +400,7 @@ void AfterSubject()
     }
 }
 
-//RE:<afterNoun>  ::= <be>  PERIOD | DESTINATION  <verb> <tense> PERIOD | OBJECT <afterObject>                                               
+//RE:<afterNoun>  ::=  <be> #gen(“DESCRIPTION”)#  #gen(“TENSE”)# PERIOD | DESTINATION  #gen(“TO”)# <verb> #getEword# #gen(“ACTION”)# <tense> #gen(“TENSE”)# PERIOD | OBJECT #gen(“OBJECT”)# <afterObject>
 // i.e. Done by:Antonio Monje
 void AfterNoun()
 {
@@ -416,7 +418,7 @@ void AfterNoun()
     }
 }
 
-//RE:<afterObject>_ ::= <verb> <tense> PERIOD | <noun> DESTINATION <verb> <tense> PERIOD                                                     
+//RE:<afterObject> ::= <verb>  #getEword# #gen(“ACTION”)# <tense> #gen(“TENSE”)# PERIOD | <noun>  #getEword# DESTINATION  #gen(“TO”)# <verb> #getEword# #gen(“ACTION”)# <tense> #gen(“TENSE”)#PERIOD                                                     
 // i.e. Done by:Antonio Monje                                                                                                                
 void AfterObject()
 {
