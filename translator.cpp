@@ -332,7 +332,7 @@ void gen(string word)
     }
   else
     {
-      outfile << "CONNECTOR" << ": " << tokenName[saved_token] << endl;
+      outfile << word << ": " << tokenName[saved_token] << endl;
     }
     
 }
