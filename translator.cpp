@@ -235,6 +235,86 @@ void getEword()
     savedEword = "However";
   else if(saved_lexeme == "dakara")
     savedEword = "Therefore";
+  //nouns
+  else if(saved_lexeme == "daigaku")
+    savedEword = "college";
+  else if(saved_lexeme == "Kurasu")
+    savedEword = "class";
+  else if(saved_lexeme == "hon")
+    savedEword = "book";
+  else if(saved_lexeme == "tesuto")
+    savedEword = "test";
+  else if(saved_lexeme == "ie")
+    savedEword = "home";
+  else if(saved_lexeme == "isu")
+    savedEword = "chair";
+  else if(saved_lexeme == "seito")
+    savedEword = "student";
+  else if(saved_lexeme == "sensei")
+    savedEword = "Teacher";
+  else if(saved_lexeme == "tomodachi")
+    savedEword = "friend";
+  else if(saved_lexeme == "jidoosha")
+    savedEword = "car";
+  else if(saved_lexeme == "ayuunyuu")
+    savedEword = "milk";
+  else if(saved_lexeme == "biiru")
+    savedEword = "beer";
+  else if(saved_lexeme == "choucho")
+    savedEword = "butterfly";
+  else if(saved_lexeme == "ryouri")
+    savedEword = "cooking";
+  else if(saved_lexeme == "toire")
+    savedEword = "restroom";
+  else if(saved_lexeme == "gohan")
+    savedEword = "meal";
+  //Description
+  else if(saved_lexeme == "yasashii")
+    savedEword = "easy";
+  else if(saved_lexeme == "muzukashii")
+    savedEword = "difficult";
+  else if(saved_lexeme == "ureshii")
+    savedEword = "pleased";
+  else if(saved_lexeme == "shiawase")
+    savedEword = "happy";
+  else if(saved_lexeme == "kanashii")
+    savedEword = "sad";
+  else if(saved_lexeme == "omoi")
+    savedEword = "heavy";
+  else if(saved_lexeme == "oishii")
+    savedEword = "delicious";
+  else if(saved_lexeme == "tennen")
+    savedEword = "natural";
+  //Verbs
+  else if(saved_lexeme == "nakI")
+    savedEword = "cry";
+  else if(saved_lexeme == "ikI")
+    savedEword = "go";
+  else if(saved_lexeme == "tabE")
+    savedEword = "eat";
+  else if(saved_lexeme == "ukE")
+    savedEword = "take";
+  else if(saved_lexeme == "kakI")
+    savedEword = "write";
+  else if(saved_lexeme == "yamI")
+    savedEword = "read";
+  else if(saved_lexeme == "namI")
+    savedEword = "drinkr";
+  else if(saved_lexeme == "agE")
+    savedEword = "give";
+  else if(saved_lexeme == "moraI")
+    savedEword = "receive";
+  else if(saved_lexeme == "butsI")
+    savedEword = "hit";
+  else if(saved_lexeme == "kerI")
+    savedEword = "kick";
+  else if(saved_lexeme == "shaberI")
+    savedEword = "talk";
+  else if(saved_lexeme == "yarI")
+    savedEword = "do";
+  else if(saved_lexeme == "yorokobI")
+    savedEword = "enjoy";
+  //else not in dictionary
   else
     savedEword = saved_lexeme;
 }
@@ -246,37 +326,15 @@ void getEword()
 
 void gen(string word)
 {
-  switch(saved_token)
+  if(word != "TENSE")
     {
-    case CONNECTOR: outfile << "CONNECTOR" << ": " << savedEword << endl;
-      break;
-
-    case SUBJECT: outfile << "ACTOR" << ": " << savedEword << endl;
-      break;
-
-    case IS:
-    case WAS: outfile << "DESCRIPTION" <<": " << savedEword << endl; outfile << "TENSE" <<": " << tokenName[saved_token] << endl;
-      break;
-
-    case OBJECT: outfile << "OBJECT" << ": " << savedEword << endl;
-      break;
-
-    case DESTINATION: outfile << "TO" << ": " << savedEword << endl;
-      break;
-
-    case WORD2: outfile << "ACTION" << ": " << savedEword << endl;
-      break;
-
-    case VERBPAST:
-    case VERBPASTNEG:
-    case VERB:
-    case VERBNEG: outfile << "TENSE" << ": " << tokenName[saved_token] << endl;
-      break;
-
-    default:
-      return;
+      outfile << word << ": " << savedEword << endl;
     }
-  cout << endl;  
+  else
+    {
+      outfile << "CONNECTOR" << ": " << tokenName[saved_token] << endl;
+    }
+    
 }
 
 
