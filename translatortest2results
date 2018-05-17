@@ -1,0 +1,774 @@
+Script started on Thu 10 May 2018 04:21:49 PM PDT
+]0;monje001@empress:~/cs421/CS421Progs/TranslatorFiles[?1034h[monje001@empress TranslatorFiles]$ g++ translator.cpp
+]0;monje001@empress:~/cs421/CS421Progs/TranslatorFiles[monje001@empress TranslatorFiles]$ ./a.out
+Enter the input file name: partBtest2
+Processing <Story> 
+
+Processing <S>
+Scanner called using word: soshite
+Matched CONNECTOR
+Processing <Noun>
+Scanner called using word: watashi
+Matched PRONOUN
+Scanner called using word: wa
+Matched SUBJECT
+Processing <After-Subject>
+Scanner called using word: rika
+Processing <Noun>
+Matched WORD1
+Processing <After-Noun>
+Scanner called using word: desu
+Processing <Be>
+Matched IS
+Scanner called using word: ne
+SYNTAX ERROR: Expected PERIOD but found ne
+]0;monje001@empress:~/cs421/CS421Progs/TranslatorFiles[monje001@empress TranslatorFiles]$ emacs translated.txt
+[?1049h[?12;25h[?1h=[H[2J[66d[K[?1l>[?12l[?25h[?1049l[39;49m[?1049h[?12;25h[?1h=[H[2J[65d[?25l-UUU:----F1  [1m*scratch*   [0m   All L1     (Fundamental) -------------------------------------------------------------------------------------------------------------------------------
+[A[2d[?12l[?25h[?12;25h[66d[?25lLoading /usr/share/emacs/site-lisp/site-start.d/desktop-entry-mode-init.el (source)...[K[H
+[?12l[?25h[?12;25h[66;87H[?25ldone[H
+[?12l[?25h[?12;25h[66;49H[?25lsystemtap-init.el (source)...[K[H
+[?12l[?25h[?12;25h[66;78H[?25ldone[H
+[?12l[?25h[?12;25h[>0c[66d[?25lLoading /usr/share/emacs/site-lisp/site-start.d/systemtap-init.el (source)...done[K[H[7mFile Edit Options Buffers Tools Lisp-Interaction Help                                                                                                                               [0m[39;49m[27m
+[A
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[30m[48;5;250m-UUU:----F1  [39;49m[1m[30m[48;5;250m*scratch*   [0m[39;49m[30m[48;5;250m   All L1     (Lisp Interaction) --------------------------------------------------------------------------------------------------------------------------[39;49m
+[A[2d[?12l[?25h[?12;25h[66d[?25lFor information about GNU Emacs and the GNU system, type C-h C-a.[K[H
+[?12l[?25h[?12;25h[66d[?25lFor information about GNU Emacs and the GNU system, type C-h C-a.[K[H[7mFile Edit Options Buffers Tools Help                                                                                                                                                [0m[39;49m[27m
+[A
+CONNECTOR: Then[K
+Actor: I/me[K
+DESCRIPTION: rika[K
+TENSE: IS[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[30m[48;5;250m-UU-:----F1  [39;49m[1m[30m[48;5;250mtranslated.txt[0m[39;49m[30m[48;5;250m   All L1     (Text) ------------------------------------------------------------------------------------------------------------------------------------[39;49m
+[A[2d[?12l[?25h[?12;25h[66d[K[2d[66d[?25l(No files need saving)[H
+[?12l[?25h[?12;25h[66d[K[?1l>[?12l[?25h[?1049l[39;49m]0;monje001@empress:~/cs421/CS421Progs/TranslatorFiles[monje001@empress TranslatorFiles]$ emacs translated.t[13P./a.oug++ translator.c[11P./a.ouemacs translated.t[13P./a.out
+Enter the input file name: partBtest3
+Processing <Story> 
+
+Processing <S>
+Scanner called using word: dakara
+Matched CONNECTOR
+Processing <Noun>
+Scanner called using word: watashi
+Matched PRONOUN
+Scanner called using word: de
+SYNTAX ERROR: Expected SUBJECT but found de
+]0;monje001@empress:~/cs421/CS421Progs/TranslatorFiles[monje001@empress TranslatorFiles]$ ./a.ouemacs translated.txt
+[?1049h[?12;25h[?1h=[H[2J[66d[K[?1l>[?12l[?25h[?1049l[39;49m[?1049h[?12;25h[?1h=[H[2J[65d[?25l-UUU:----F1  [1m*scratch*   [0m   All L1     (Fundamental) -------------------------------------------------------------------------------------------------------------------------------
+[A[2d[?12l[?25h[?12;25h[66d[?25lLoading /usr/share/emacs/site-lisp/site-start.d/desktop-entry-mode-init.el (source)...[K[H
+[?12l[?25h[?12;25h[66;87H[?25ldone[H
+[?12l[?25h[?12;25h[66;49H[?25lsystemtap-init.el (source)...[K[H
+[?12l[?25h[?12;25h[66;78H[?25ldone[H
+[?12l[?25h[?12;25h[>0c[66d[?25lLoading /usr/share/emacs/site-lisp/site-start.d/systemtap-init.el (source)...done[K[H[7mFile Edit Options Buffers Tools Lisp-Interaction Help                                                                                                                               [0m[39;49m[27m
+[A
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[30m[48;5;250m-UUU:----F1  [39;49m[1m[30m[48;5;250m*scratch*   [0m[39;49m[30m[48;5;250m   All L1     (Lisp Interaction) --------------------------------------------------------------------------------------------------------------------------[39;49m
+[A[2d[?12l[?25h[?12;25h[66d[?25lFor information about GNU Emacs and the GNU system, type C-h C-a.[K[H
+[?12l[?25h[?12;25h[66d[?25lFor information about GNU Emacs and the GNU system, type C-h C-a.[K[H[7mFile Edit Options Buffers Tools Help                                                                                                                                                [0m[39;49m[27m
+[A
+CONNECTOR: Therefore[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[30m[48;5;250m-UU-:----F1  [39;49m[1m[30m[48;5;250mtranslated.txt[0m[39;49m[30m[48;5;250m   All L1     (Text) ------------------------------------------------------------------------------------------------------------------------------------[39;49m
+[A[2d[?12l[?25h[?12;25h[66d[K[2d[66d[?25l(No files need saving)[H
+[?12l[?25h[?12;25h[66d[K[?1l>[?12l[?25h[?1049l[39;49m]0;monje001@empress:~/cs421/CS421Progs/TranslatorFiles[monje001@empress TranslatorFiles]$ emacs translated.t[13P./a.out
+Enter the input file name: partBtest4
+Processing <Story> 
+
+Processing <S>
+Scanner called using word: watashi
+Processing <Noun>
+Matched PRONOUN
+Scanner called using word: wa
+Matched SUBJECT
+Processing <After-Subject>
+Scanner called using word: rika
+Processing <Noun>
+Matched WORD1
+Processing <After-Noun>
+Scanner called using word: mashita
+SYNTAX ERROR: unexpected mashita found in parser function After-Noun
+]0;monje001@empress:~/cs421/CS421Progs/TranslatorFiles[monje001@empress TranslatorFiles]$ ./a.ouemacs translated.txt
+[?1049h[?12;25h[?1h=[H[2J[66d[K[?1l>[?12l[?25h[?1049l[39;49m[?1049h[?12;25h[?1h=[H[2J[65d[?25l-UUU:----F1  [1m*scratch*   [0m   All L1     (Fundamental) -------------------------------------------------------------------------------------------------------------------------------
+[A[2d[?12l[?25h[?12;25h[66d[?25lLoading /usr/share/emacs/site-lisp/site-start.d/desktop-entry-mode-init.el (source)...[K[H
+[?12l[?25h[?12;25h[66;87H[?25ldone[H
+[?12l[?25h[?12;25h[66;49H[?25lsystemtap-init.el (source)...[K[H
+[?12l[?25h[?12;25h[66;78H[?25ldone[H
+[?12l[?25h[?12;25h[>0c[66d[?25lLoading /usr/share/emacs/site-lisp/site-start.d/systemtap-init.el (source)...done[K[H[7mFile Edit Options Buffers Tools Lisp-Interaction Help                                                                                                                               [0m[39;49m[27m
+[A
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[30m[48;5;250m-UUU:----F1  [39;49m[1m[30m[48;5;250m*scratch*   [0m[39;49m[30m[48;5;250m   All L1     (Lisp Interaction) --------------------------------------------------------------------------------------------------------------------------[39;49m
+[A[2d[?12l[?25h[?12;25h[66d[?25lFor information about GNU Emacs and the GNU system, type C-h C-a.[K[H
+[?12l[?25h[?12;25h[66d[?25lFor information about GNU Emacs and the GNU system, type C-h C-a.[K[H[7mFile Edit Options Buffers Tools Help                                                                                                                                                [0m[39;49m[27m
+[A
+Actor: I/me[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[30m[48;5;250m-UU-:----F1  [39;49m[1m[30m[48;5;250mtranslated.txt[0m[39;49m[30m[48;5;250m   All L1     (Text) ------------------------------------------------------------------------------------------------------------------------------------[39;49m
+[A[2d[?12l[?25h[?12;25h[66d[K[2d[66d[?25l(No files need saving)[H
+[?12l[?25h[?12;25h[66d[K[?1l>[?12l[?25h[?1049l[39;49m]0;monje001@empress:~/cs421/CS421Progs/TranslatorFiles[monje001@empress TranslatorFiles]$ emacs translated.t[13P./a.ouemacs translated.t[13P./a.out
+Enter the input file name: tranpartBtest5
+Processing <Story> 
+
+Processing <S>
+Scanner called using word: wa
+Processing <Noun>
+SYNTAX ERROR: unexpected wa found in parser function Noun
+]0;monje001@empress:~/cs421/CS421Progs/TranslatorFiles[monje001@empress TranslatorFiles]$ ./a.ouemacs translated.txt
+[?1049h[?12;25h[?1h=[H[2J[66d[K[?1l>[?12l[?25h[?1049l[39;49m[?1049h[?12;25h[?1h=[H[2J[65d[?25l-UUU:----F1  [1m*scratch*   [0m   All L1     (Fundamental) -------------------------------------------------------------------------------------------------------------------------------
+[A[2d[?12l[?25h[?12;25h[66d[?25lLoading /usr/share/emacs/site-lisp/site-start.d/desktop-entry-mode-init.el (source)...[K[H
+[?12l[?25h[?12;25h[66;87H[?25ldone[H
+[?12l[?25h[?12;25h[66;49H[?25lsystemtap-init.el (source)...[K[H
+[?12l[?25h[?12;25h[66;78H[?25ldone[H
+[?12l[?25h[?12;25h[>0c[66d[?25lLoading /usr/share/emacs/site-lisp/site-start.d/systemtap-init.el (source)...done[K[H[7mFile Edit Options Buffers Tools Lisp-Interaction Help                                                                                                                               [0m[39;49m[27m
+[A
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[30m[48;5;250m-UUU:----F1  [39;49m[1m[30m[48;5;250m*scratch*   [0m[39;49m[30m[48;5;250m   All L1     (Lisp Interaction) --------------------------------------------------------------------------------------------------------------------------[39;49m
+[A[2d[?12l[?25h[?12;25h[66d[?25lFor information about GNU Emacs and the GNU system, type C-h C-a.[K[H
+[?12l[?25h[?12;25h[66d[?25lFor information about GNU Emacs and the GNU system, type C-h C-a.[K[H[7mFile Edit Options Buffers Tools Help                                                                                                                                                [0m[39;49m[27m
+[A
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[30m[48;5;250m-UUU:----F1  [39;49m[1m[30m[48;5;250mtranslated.txt[0m[39;49m[30m[48;5;250m   All L1     (Text) ------------------------------------------------------------------------------------------------------------------------------------[39;49m
+[A[2d[?12l[?25h[?12;25h[66d[K[2d[66d[?25l(No files need saving)[H
+[?12l[?25h[?12;25h[66d[K[?1l>[?12l[?25h[?1049l[39;49m]0;monje001@empress:~/cs421/CS421Progs/TranslatorFiles[monje001@empress TranslatorFiles]$ emacs translated.t[13P./a.out
+Enter the input file name: partBtest6
+Processing <Story> 
+
+Processing <S>
+Scanner called using word: apple
+LEXICAL ERROR: apple is not a valid token
+Processing <Noun>
+SYNTAX ERROR: unexpected apple found in parser function Noun
+]0;monje001@empress:~/cs421/CS421Progs/TranslatorFiles[monje001@empress TranslatorFiles]$ ./a.ouemacs translated.txt
+[?1049h[?12;25h[?1h=[H[2J[66d[K[?1l>[?12l[?25h[?1049l[39;49m[?1049h[?12;25h[?1h=[H[2J[65d[?25l-UUU:----F1  [1m*scratch*   [0m   All L1     (Fundamental) -------------------------------------------------------------------------------------------------------------------------------
+[A[2d[?12l[?25h[?12;25h[66d[?25lLoading /usr/share/emacs/site-lisp/site-start.d/desktop-entry-mode-init.el (source)...[K[H
+[?12l[?25h[?12;25h[66;87H[?25ldone[H
+[?12l[?25h[?12;25h[66;49H[?25lsystemtap-init.el (source)...[K[H
+[?12l[?25h[?12;25h[66;78H[?25ldone[H
+[?12l[?25h[?12;25h[>0c[66d[?25lLoading /usr/share/emacs/site-lisp/site-start.d/systemtap-init.el (source)...done[K[H[7mFile Edit Options Buffers Tools Lisp-Interaction Help                                                                                                                               [0m[39;49m[27m
+[A
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[30m[48;5;250m-UUU:----F1  [39;49m[1m[30m[48;5;250m*scratch*   [0m[39;49m[30m[48;5;250m   All L1     (Lisp Interaction) --------------------------------------------------------------------------------------------------------------------------[39;49m
+[A[2d[?12l[?25h[?12;25h[66d[?25lFor information about GNU Emacs and the GNU system, type C-h C-a.[K[H
+[?12l[?25h[?12;25h[66d[?25lFor information about GNU Emacs and the GNU system, type C-h C-a.[K[H[7mFile Edit Options Buffers Tools Help                                                                                                                                                [0m[39;49m[27m
+[A
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[30m[48;5;250m-UUU:----F1  [39;49m[1m[30m[48;5;250mtranslated.txt[0m[39;49m[30m[48;5;250m   All L1     (Text) ------------------------------------------------------------------------------------------------------------------------------------[39;49m
+[A[2d[?12l[?25h[?12;25h[66d[K[2d[66d[?25l(No files need saving)[H
+[?12l[?25h[?12;25h[66d[K[?1l>[?12l[?25h[?1049l[39;49m]0;monje001@empress:~/cs421/CS421Progs/TranslatorFiles[monje001@empress TranslatorFiles]$ exit
+exit
+
+Script done on Thu 10 May 2018 04:24:08 PM PDT
